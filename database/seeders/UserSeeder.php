@@ -13,8 +13,8 @@ class UserSeeder extends Seeder
         User::create([
             'nik' => '12345',
             'nama' => 'Admin OVOEGG',
-            'email' => 'admin@ovoegg.com',
-            'password' => Hash::make('admin123'), // Passwordnya nanti ini
+            'email' => env('ADMIN_EMAIL', 'admin@ovoegg.com'),
+            'password' => Hash::make(env('ADMIN_PASSWORD', 'password')),
             'role' => 'Admin',
             'status_aktif' => true,
         ]);
